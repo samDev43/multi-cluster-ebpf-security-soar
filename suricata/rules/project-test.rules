@@ -1,0 +1,1 @@
+alert http any any -> any any (msg:"PROJECT2 Test HTTP Detection"; flow:established,to_server; http.uri; content:"/project2-test"; sid:1000101; rev:1;)

@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Suricata logs and captures
+*.log
+eve.json
+*.pcap
+*.pcapng
+suricata/*-logs/
+
+# Backup and temporary files
+*backup*
+*.bak
+*.tmp
+*.swp
+*~
+
+# Kubernetes credentials and secrets
+kubeconfig*
+*.key
+*.pem
+*.p12
+*.pfx
+*secret*.yaml
+*secret*.yml
+
+# Environment files
+.env
+.env.*
+
+# Internal infrastructure evidence
+evidence/
+
+# Local SOAR test alerts
+soar/tests/

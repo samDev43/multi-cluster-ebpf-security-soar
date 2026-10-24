@@ -1,0 +1,23 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-east-client-only
+  namespace: cilium-test-1
+spec:
+  endpointSelector:
+    matchLabels:
+      name: echo-other-node
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            io.cilium.k8s.policy.cluster: east
+            io.kubernetes.pod.namespace: cilium-test-1
+            name: client
+      toPorts:
+        - ports:
+            - port: "8080"
+              protocol: TCP
+          rules:
+            http:
+              - method: "GET"
+                path: "/"
