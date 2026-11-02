@@ -1,0 +1,22 @@
+tetragon:
+  enabled: true
+  enableK8sAPI: true
+  enableProcessCred: true
+  enableProcessNs: true
+  debug: false
+
+tetragonOperator:
+  enabled: true
+  replicas: 1
+  tracingPolicy:
+    enabled: true
+  prometheus:
+    enabled: true
+
+crds:
+  installMethod: operator
+
+hostNetwork: true
+
+rthooks:
+  enabled: false

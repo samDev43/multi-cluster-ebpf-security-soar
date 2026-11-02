@@ -1,0 +1,21 @@
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicy
+metadata:
+  name: capability-monitor
+spec:
+  kprobes:
+    - call: "cap_capable"
+      syscall: false
+      args:
+        - index: 2
+          type: "int"
+          label: "capability"
+      selectors:
+        - matchArgs:
+            - index: 2
+              operator: "Equal"
+              values:
+                - "12"
+                - "21"
+          matchActions:
+            - action: Post

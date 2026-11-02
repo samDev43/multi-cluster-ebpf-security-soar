@@ -36,3 +36,8 @@ evidence/
 
 # Local SOAR test alerts
 soar/tests/
+
+# Local SOAR test and backup files
+soar/test-events.jsonl
+soar/*before_dedup.py
+soar/__pycache__/
